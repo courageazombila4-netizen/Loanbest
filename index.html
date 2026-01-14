@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Application (Demo)</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Loan Application</h1>
+
+    <form method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="number" name="amount" placeholder="Loan Amount (GHS)" required>
+        <button type="submit">Apply</button>
+    </form>
+
+    {% if loan %}
+    <div class="result">
+        <h2>Loan Summary</h2>
+        <p><b>Name:</b> {{ loan.name }}</p>
+        <p><b>Loan Amount:</b> GHS {{ loan.amount }}</p>
+        <p><b>Processing Fee (5%):</b> GHS {{ loan.fee }}</p>
+        <p><b>Total Repayment:</b> GHS {{ loan.total }}</p>
+
+        <p class="note">
+            ⚠️ Payment must be done through an <b>official Mobile Money system</b>.
+            This demo does not collect real money.
+        </p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
