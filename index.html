@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Loan Application (Demo)</title>
+    <title>Loan Application</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
 <div class="container">
+
+    <!-- Loan Banner Image -->
+    <img src="/static/loan-banner.jpg" class="banner" alt="Loan Banner">
+
+    <!-- YOUR NAME ADDED HERE -->
+    <p class="owner">Powered by <strong>Mowgli</strong></p>
+
     <h1>Loan Application</h1>
 
     <form method="POST">
@@ -20,17 +27,17 @@
     {% if loan %}
     <div class="result">
         <h2>Loan Summary</h2>
-        <p><b>Name:</b> {{ loan.name }}</p>
-        <p><b>Loan Amount:</b> GHS {{ loan.amount }}</p>
-        <p><b>Processing Fee (5%):</b> GHS {{ loan.fee }}</p>
-        <p><b>Total Repayment:</b> GHS {{ loan.total }}</p>
+        <p><strong>Name:</strong> {{ loan.name }}</p>
+        <p><strong>Loan Amount:</strong> GHS {{ loan.amount }}</p>
+        <p><strong>Processing Fee (5%):</strong> GHS {{ loan.fee }}</p>
+        <p><strong>Total Repayment:</strong> GHS {{ loan.total }}</p>
 
         <p class="note">
-            ⚠️ Payment must be done through an <b>official Mobile Money system</b>.
-            This demo does not collect real money.
+            ⚠️ Demo only. Payments must go through official Mobile Money systems.
         </p>
     </div>
     {% endif %}
+
 </div>
 
 </body>
